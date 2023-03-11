@@ -352,22 +352,47 @@ function App() {
     //   picture: "https://picsum.photos/200"
     // }
   ]);
+  const [locks, setLocks] = useState([false, false, false, false]);
 
-  useKeypress(" ", () => {
-    let arrayShuffle = people;
-    let j, x, i;
-    for (i = arrayShuffle.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1));
-      x = arrayShuffle[i];
-      arrayShuffle[i] = arrayShuffle[j];
-      arrayShuffle[j] = x;
-    }
-    setPeople([...arrayShuffle]);
-  });
+  const [peopleIndex, setPeopleIndex] = useState([0, 1, 2, 3]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.code === 'Space') {
+        setPeopleIndex([          
+          locks[0] ? peopleIndex[0] : randomizeNumber(),
+          locks[1] ? peopleIndex[1] : randomizeNumber(),
+          locks[2] ? peopleIndex[2] : randomizeNumber(),
+          locks[3] ? peopleIndex[3] : randomizeNumber(),
+        ]);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [locks, peopleIndex]);
+
+  const randomizeNumber = () => {
+    const randomNumber = Math.floor(Math.random() * people.length);
+
+    if (peopleIndex.includes(randomNumber)) return randomizeNumber();
+
+    return randomNumber;
+  }
 
   useEffect(() => {
     console.log("change");
   }, [people]);
+
+  function toggleLock(index) {
+    document.activeElement.blur();
+    setLocks(prevLocks => {
+      const newLocks = [...prevLocks];
+      newLocks[index] = !newLocks[index];
+      return newLocks;
+    });
+  }
 
   return (
     <div className="App">
@@ -376,10 +401,25 @@ function App() {
           <h1 className="text-4xl font-bold my-5">Find your teammate!</h1>
         </div>
         <div className="grid grid-cols-4 h-screen">
-          <Card bg="bg-neutral-50" data={people[0]} />
-          <Card bg="bg-neutral-100" data={people[1]} />
-          <Card bg="bg-neutral-200" data={people[2]} />
-          <Card bg="bg-neutral-300" data={people[3]} />
+          <Card 
+            bg="bg-neutral-50" 
+            data={people[peopleIndex[0]]} 
+            lock={locks[0]} 
+            onToggleLock={() => toggleLock(0)} />
+          <Card 
+            bg="bg-neutral-100" 
+            data={people[peopleIndex[1]]} 
+            lock={locks[1]} 
+            onToggleLock={() => toggleLock(1)} />
+          <Card 
+            bg="bg-neutral-200" 
+            data={people[peopleIndex[2]]} 
+            lock={locks[2]} onToggleLock={() => toggleLock(2)} />
+          <Card 
+            bg="bg-neutral-300" 
+            data={people[peopleIndex[3]]} 
+            lock={locks[3]} 
+            onToggleLock={() => toggleLock(3)} />
         </div>
       </div>
     </div>
