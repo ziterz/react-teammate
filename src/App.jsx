@@ -65,7 +65,8 @@ function App() {
       interest: "Coding",
       goals: "IOS Developer",
       socialMedia: "Instagram: agfiddprsty",
-      picture: "https://v5.airtableusercontent.com/v1/15/15/1678557600000/5uaCNZnZmNogWZizHwbO1w/gMsQYBxBScv-037UnpLAeCrJ7yre7Bzt1eij50qKnDViaP4xtsSNiv9lnTiLufhw8EJqFkc-i5ECElAIO_6SNQ/Dxpl29xwyvcSHJsq5Q-gSRloAlG-9In135RCjNpTyyE",
+      picture:
+        "https://v5.airtableusercontent.com/v1/15/15/1678557600000/5uaCNZnZmNogWZizHwbO1w/gMsQYBxBScv-037UnpLAeCrJ7yre7Bzt1eij50qKnDViaP4xtsSNiv9lnTiLufhw8EJqFkc-i5ECElAIO_6SNQ/Dxpl29xwyvcSHJsq5Q-gSRloAlG-9In135RCjNpTyyE",
       active: true
     },
     {
@@ -358,18 +359,18 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.code === 'Space') {
-        setPeopleIndex([          
+      if (event.code === "Space") {
+        setPeopleIndex([
           locks[0] ? peopleIndex[0] : randomizeNumber(),
           locks[1] ? peopleIndex[1] : randomizeNumber(),
           locks[2] ? peopleIndex[2] : randomizeNumber(),
-          locks[3] ? peopleIndex[3] : randomizeNumber(),
+          locks[3] ? peopleIndex[3] : randomizeNumber()
         ]);
       }
     };
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [locks, peopleIndex]);
 
@@ -379,7 +380,7 @@ function App() {
     if (peopleIndex.includes(randomNumber)) return randomizeNumber();
 
     return randomNumber;
-  }
+  };
 
   useEffect(() => {
     console.log("change");
@@ -387,7 +388,7 @@ function App() {
 
   function toggleLock(index) {
     document.activeElement.blur();
-    setLocks(prevLocks => {
+    setLocks((prevLocks) => {
       const newLocks = [...prevLocks];
       newLocks[index] = !newLocks[index];
       return newLocks;
@@ -400,26 +401,31 @@ function App() {
         <div className="absolute bg-white w-screen">
           <h1 className="text-4xl font-bold my-5">Find your teammate!</h1>
         </div>
-        <div className="grid grid-cols-4 h-screen">
-          <Card 
-            bg="bg-neutral-50" 
-            data={people[peopleIndex[0]]} 
-            lock={locks[0]} 
-            onToggleLock={() => toggleLock(0)} />
-          <Card 
-            bg="bg-neutral-100" 
-            data={people[peopleIndex[1]]} 
-            lock={locks[1]} 
-            onToggleLock={() => toggleLock(1)} />
-          <Card 
-            bg="bg-neutral-200" 
-            data={people[peopleIndex[2]]} 
-            lock={locks[2]} onToggleLock={() => toggleLock(2)} />
-          <Card 
-            bg="bg-neutral-300" 
-            data={people[peopleIndex[3]]} 
-            lock={locks[3]} 
-            onToggleLock={() => toggleLock(3)} />
+        <div className="grid grid-cols-2 lg:grid-cols-4 h-screen pt-20">
+          <Card
+            bg="bg-neutral-50"
+            data={people[peopleIndex[0]]}
+            lock={locks[0]}
+            onToggleLock={() => toggleLock(0)}
+          />
+          <Card
+            bg="bg-neutral-100"
+            data={people[peopleIndex[1]]}
+            lock={locks[1]}
+            onToggleLock={() => toggleLock(1)}
+          />
+          <Card
+            bg="bg-neutral-200"
+            data={people[peopleIndex[2]]}
+            lock={locks[2]}
+            onToggleLock={() => toggleLock(2)}
+          />
+          <Card
+            bg="bg-neutral-300"
+            data={people[peopleIndex[3]]}
+            lock={locks[3]}
+            onToggleLock={() => toggleLock(3)}
+          />
         </div>
       </div>
     </div>
