@@ -366,9 +366,7 @@ function App() {
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      console.log("change");
-    }, 1000);
+    console.log("change");
   }, [people]);
 
   return (
