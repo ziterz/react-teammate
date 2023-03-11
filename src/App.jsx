@@ -7,21 +7,21 @@ function App() {
   let [people, setPeople] = useState([
     {
       id: 1,
-      name: "Ziady",
+      name: "Ziady Mubaraq",
       background: "Software Engineer",
       interest: "Coding, Music, Design🎧",
-      goals: "Have a Dream Team🦄",
+      goals: "Have a Dream Team",
       socialMedia: "LinkedIn: ziterz",
       picture:
-        "https://v5.airtableusercontent.com/v1/15/15/1678536000000/piSyr4kl7Mvnr9QW2I5mAA/Ho0B7xe5wYNuUfcPeMqwTJ2ng0xNn11dgwEJC5LDjbDlQpIuOBunzcQZ3y5SSbhNdUwGa6gm7ESToo6umDqgOg/vTeWgABF4C92ZeWBxjnWBy1HvWD09-LvhzBRvnD9rck",
+        "https://v5.airtableusercontent.com/v1/15/15/1678557600000/Zn2ms8qAIcHVZrZ0iyiGvA/eDKAT1RGU9bcRY9ieI-xzkzqrkoJW6k9LYlHEW7ft2WwBn5ZbRNQgzA8rmIUJDeRaaExkhyVANU9YBJuCgVSiA/80tvwUH5UM7952hyrp2-WMBMnN51mbmgZSSZitHCGoU",
       active: true
     },
     {
       id: 2,
-      name: "Fajri",
+      name: "Muhammad Adha Fajri Jonison",
       background: "Full-Stack JavaScript",
-      interest: "-",
-      goals: "-",
+      interest: "Coding",
+      goals: "Better person",
       socialMedia: "-",
       picture: "https://picsum.photos/201",
       active: true
@@ -44,7 +44,7 @@ function App() {
       goals: "to be product manager",
       socialMedia: "linkedin - safik",
       picture:
-        "https://v5.airtableusercontent.com/v1/15/15/1678536000000/29gBeKzVEoiIeSsrAPo1HA/X2_ILMiJiCns4ZnDWcBhXTcYkeakB2QWcft1AhDVv1zp7G0AKl1rGsQDmB_s05ZIP7vS5YudN1Rd-tIY9M9Kvw/Gnf1v6448lz-sq7JbZ2Oa4q-SYFgpyXK3Ji0q-luXgw",
+        "https://v5.airtableusercontent.com/v1/15/15/1678557600000/CufbpDi7qyPsh8My3DqMyQ/yIcwsGwAEf6Hq01iY6-0a9kvKB54noKCxu2GqbsIjYxROayS4rebszm6XPV4Ud7n-THF03D7y8b5fVX4HJ9x0A/FX2t9u7XJ4SitdxwdevUPVlGGLq9cYI34bmwptBUA7I",
       active: true
     },
     {
@@ -55,17 +55,17 @@ function App() {
       goals: "Win WWDC",
       socialMedia: "IG - w_alfandi",
       picture:
-        "https://v5.airtableusercontent.com/v1/15/15/1678536000000/9C2CQN3UxqqvsRwqUYX6Rw/teuAAhWkBtr9uheFWgucOfuu1lUmvFbGposB3kfme3CVBq7lQzXpM0_oR5E80t8yhC8owZQsfLKEOAgLSncnjA/00erSQvtCiT7-maejjEvC6qvhXghMkykKGPzjKrTHDQ",
+        "https://v5.airtableusercontent.com/v1/15/15/1678557600000/pdMihvBqB5jpSq9DL38xRw/ioKBOEPiPECevSSQg9nIVNdWNFhOIRsg073krreayY9Ke6dqw0987fqfGS1ki9BphYwskdXYrt1BxwSkOwZ3tg/TaRBKyXIe8-GVhEQLiXFABelEJg3Rdbx_ucOB27iupA",
       active: true
     },
     {
       id: 6,
-      name: "Amanda",
-      background: "Marketing Manager",
-      interest: "Social Media, Photography",
-      goals: "Increase Brand Awareness",
-      socialMedia: "Instagram: amandapage",
-      picture: "https://picsum.photos/205",
+      name: "Agfid Danu Prasetyo",
+      background: "React Developer",
+      interest: "Coding",
+      goals: "IOS Developer",
+      socialMedia: "Instagram: agfiddprsty",
+      picture: "https://v5.airtableusercontent.com/v1/15/15/1678557600000/5uaCNZnZmNogWZizHwbO1w/gMsQYBxBScv-037UnpLAeCrJ7yre7Bzt1eij50qKnDViaP4xtsSNiv9lnTiLufhw8EJqFkc-i5ECElAIO_6SNQ/Dxpl29xwyvcSHJsq5Q-gSRloAlG-9In135RCjNpTyyE",
       active: true
     },
     {
