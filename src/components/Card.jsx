@@ -11,7 +11,7 @@ function Card(props) {
     const timer = setTimeout(() => {
       setPeople(props.data);
       setLoading(true);
-    }, 1000);
+    }, 500);
     return () => clearTimeout(timer);
   }, [props, people]);
 
