@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-function Card(props) {
+const Card = (props) => {
   const [people, setPeople] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -48,11 +48,15 @@ function Card(props) {
           {loading ? people.socialMedia : <Skeleton />}
         </h2>
         <div className="mt-10">
-          <i className="fa-solid fa-unlock text-2xl"></i>
+          <button onClick={props.onToggleLock} className={`fa-solid ${props.lock ? "fa-lock" : "fa-unlock"} text-2xl`} />
         </div>
       </div>
     </div>
   );
 }
 
-export default Card;
+export default memo(Card, (prevProps, nextProps) => {
+  console.log('[memo][Card][prevProps]', prevProps);
+  console.log('[memo][Card][nextProps]', nextProps);
+  return prevProps.lock === true && nextProps.lock === true;
+});
