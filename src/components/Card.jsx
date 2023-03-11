@@ -16,8 +16,8 @@ const Card = (props) => {
   }, [props, people]);
 
   return (
-    <div className={`flex justify-center items-center mt-5 && ${props.bg}`}>
-      <div className="flex-row">
+    <div className={`flex justify-center items-center && ${props.bg}`}>
+      <div className="flex-row py-10">
         {loading ? (
           <img
             src={people.picture}
