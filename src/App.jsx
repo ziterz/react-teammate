@@ -10,7 +10,7 @@ function App() {
       name: "Ziady",
       background: "Software Engineer",
       interest: "Coding, Music, Design🎧",
-      goals: "Have a Dream Team",
+      goals: "Have a Dream Team🦄",
       socialMedia: "LinkedIn: ziterz",
       picture:
         "https://v5.airtableusercontent.com/v1/15/15/1678536000000/piSyr4kl7Mvnr9QW2I5mAA/Ho0B7xe5wYNuUfcPeMqwTJ2ng0xNn11dgwEJC5LDjbDlQpIuOBunzcQZ3y5SSbhNdUwGa6gm7ESToo6umDqgOg/vTeWgABF4C92ZeWBxjnWBy1HvWD09-LvhzBRvnD9rck",
