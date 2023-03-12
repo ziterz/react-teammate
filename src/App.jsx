@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import useKeypress from "react-use-keypress";
 import "./App.css";
 import Card from "./components/Card";
 import { getPeoples } from "./firebase";
 
 function App() {
-const [people, setPeople] = useState([]);
+  const [people, setPeople] = useState([]);
   const [locks, setLocks] = useState([false, false, false, false]);
 
   const [peopleIndex, setPeopleIndex] = useState([0, 1, 2, 3]);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      console.log('[App][useEffect][handleKeyDown][people]', people);
+      console.log("[App][useEffect][handleKeyDown][people]", people);
       if (event.code === "Space") {
         setPeopleIndex([
           locks[0] ? peopleIndex[0] : randomizeNumber(),
@@ -29,7 +28,7 @@ const [people, setPeople] = useState([]);
   }, [locks, peopleIndex, people]);
 
   const randomizeNumber = () => {
-    console.log('[App][randomizeNumber][people.length]', people.length);
+    console.log("[App][randomizeNumber][people.length]", people.length);
     if (people.length === 0) return;
 
     const randomNumber = Math.floor(Math.random() * people.length);
@@ -44,12 +43,11 @@ const [people, setPeople] = useState([]);
   }, [people]);
 
   useEffect(() => {
-    getPeoples().then(peopleList => {
-      console.log('[App][useEffect][getPeoples][peopleList]', peopleList);
+    getPeoples().then((peopleList) => {
+      console.log("[App][useEffect][getPeoples][peopleList]", peopleList);
       setPeople(peopleList);
     });
   }, []);
-
 
   function toggleLock(index) {
     document.activeElement.blur();
