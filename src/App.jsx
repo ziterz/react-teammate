@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import { getPeoples } from "./firebase";
+import discord from "./assets/discord.png";
+import fyt from "./assets/fyt-logo.png";
 
 function App() {
   const [people, setPeople] = useState([]);
   const [locks, setLocks] = useState([false, false, false, false]);
-
   const [peopleIndex, setPeopleIndex] = useState([0, 1, 2, 3]);
 
   useEffect(() => {
@@ -61,10 +62,29 @@ function App() {
   return (
     <div className="App">
       <div className="mx-auto">
-        <div className="absolute bg-white w-screen">
-          <h1 className="text-4xl font-bold my-5">Find your teammate!</h1>
+        <div className="absolute ">
+          <div className="md:hidden">
+            <img src={fyt} alt="fyt logo" width={200} className="mx-auto p-2" />
+          </div>
+          <div className="hidden md:block">
+            <img
+              src={fyt}
+              alt="fyt logo"
+              width={300}
+              className="absolute top-0 left-0 right-0 mx-auto "
+            />
+            <div className="flex justify-between w-screen p-5 bg-white">
+              <span className="text-neutral-500 flex items-center">
+                Press the <b>&nbsp;spacebar&nbsp;</b> to find your teammate!
+              </span>
+              <div className="flex gap-5 items-center">
+                <span>Meet Our Team</span>
+                <img src={discord} alt="discord" width={100} />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 h-screen pt-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 h-screen">
           <Card
             bg="bg-neutral-50"
             data={people[peopleIndex[0]]}
