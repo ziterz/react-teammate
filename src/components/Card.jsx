@@ -8,12 +8,21 @@ const Card = (props) => {
 
   useEffect(() => {
     setLoading(false);
+    if (props.lock) {
+      setupData();
+      return;
+    }
+
     const timer = setTimeout(() => {
-      setPeople(props.data);
-      setLoading(true);
+      setupData();
     }, 500);
     return () => clearTimeout(timer);
   }, [props, people]);
+
+  const setupData = () => {
+    setPeople(props.data);
+    setLoading(true);
+  }
 
   return (
     <div className={`flex justify-center items-center && ${props.bg}`}>
