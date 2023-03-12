@@ -6,3 +6,12 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+::selection {
+  background: #6366f1;;
+  color: #ffffff;
+}
+
+::placeholder {
+  opacity: 0.5 !important;
+}
