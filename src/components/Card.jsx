@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import defaultProfilePicture from "./../assets/default-profile-picture.png";
 
 const Card = (props) => {
   const [people, setPeople] = useState({});
@@ -20,9 +21,13 @@ const Card = (props) => {
       <div className="flex-row py-10">
         {loading ? (
           <img
-            src={people.picture}
+            src={people.picture || defaultProfilePicture}
             alt="picture"
             className="block mx-auto rounded-full w-40 h-40 object-cover"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = defaultProfilePicture;
+            }}
           />
         ) : (
           <Skeleton height={160} width={160} />
