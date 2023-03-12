@@ -64,7 +64,7 @@ function App() {
       <div className="mx-auto">
         <div className="absolute ">
           <div className="md:hidden">
-            <img src={fyt} alt="fyt logo" width={250} className="mx-auto p-2" />
+            <img src={fyt} alt="fyt logo" width={220} className="mx-auto p-2" />
           </div>
           <div className="hidden md:block">
             <img
