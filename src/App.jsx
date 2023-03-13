@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import { getPeoples } from "./firebase";
 import discord from "./assets/discord.png";
 import fyt from "./assets/fyt-logo.png";
+import { Link } from "react-router-dom";
 
 function App() {
   const [people, setPeople] = useState([]);
@@ -83,7 +84,8 @@ function App() {
         <div className="absolute z-10">
           <div className="md:hidden fixed w-screen px-3 py-3 bg-white flex justify-between items-center">
             <img src={fyt} alt="fyt logo" width={170} height={170} className="p-2" />
-            <img src={discord} alt="discord" className="h-10" />
+            <a href="https://discord.gg/JBjyBUsK" target="_blank">
+              <img src={discord} alt="discord" className="h-10" /></a>
           </div>
           <div className="hidden md:block">
             <img
@@ -98,8 +100,10 @@ function App() {
                 Press the <b>&nbsp;spacebar&nbsp;</b> to find your teammate!
               </span>
               <div className="flex gap-5 items-center">
-                <span>Meet Our Team</span>
-                <img src={discord} alt="discord" width={100} />
+                <Link to="/team">Meet Our Team</Link>
+                <a href="https://discord.gg/JBjyBUsK" target="_blank">
+                  <img src={discord} alt="discord" width={100} /></a>
+
               </div>
             </div>
           </div>
@@ -167,7 +171,7 @@ function App() {
           <div className="flex justify-between w-screen p-3 bg-white">
             <button className="py-2 px-5 border rounded-lg hover:text-black  hover:border-black" onClick={generate}>Generate</button>
             <div className="flex gap-5 items-center">
-              <span>Meet Our Team</span>
+              <Link to="/team">Meet Our Team</Link>
             </div>
           </div>
         </div>
