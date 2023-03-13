@@ -62,7 +62,6 @@ const Card = (props) => {
           {loading ? people?.goals : <Skeleton />}
         </h2>
         <span className="text-sm text-slate-400">Social Media :</span>
-
         {loading ? (
           <div className="mt-2 flex justify-center gap-2">
             {people?.instagram ? (
@@ -110,7 +109,6 @@ const Card = (props) => {
         ) : (
           <Skeleton />
         )}
-
         <div className="mt-10">
           <button
             onClick={props.onToggleLock}
