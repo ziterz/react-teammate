@@ -122,7 +122,7 @@ const Card = (props) => {
       </div>
       {/* Mobile version*/}
       <div className="flex flex-row py-4 px-5 md:hidden gap-10 justify-between w-screen">
-        <div className="min-w-[100px] grow-1">
+        <div className="min-w-[100px] basis-1/2">
           {loading ? (
             <img
               src={people?.picture || defaultProfilePicture}
@@ -146,7 +146,7 @@ const Card = (props) => {
             } text-2xl`}
           />
         </div>
-        <div className="text-center mx-auto grow-1">
+        <div className="text-center mx-auto basis-1/2">
           <span className="text-sm text-slate-400">Background :</span>
           <h2 className="text-sm mb-2 text-slate-900">
             {loading ? people?.background : <Skeleton />}
