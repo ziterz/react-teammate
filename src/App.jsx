@@ -73,12 +73,17 @@ function App() {
     });
   }
 
+  function generate() {
+    setPeopleIndex(randomizePeoplexIndex());
+  }
+
   return (
     <div className="App">
       <div className="mx-auto static">
-        <div className="absolute ">
-          <div className="md:hidden">
-            <img src={fyt} alt="fyt logo" width={220} height={220} className="mx-auto p-2" />
+        <div className="absolute z-10">
+          <div className="md:hidden fixed w-screen px-3 py-3 bg-white flex justify-between items-center">
+            <img src={fyt} alt="fyt logo" width={170} height={170} className="p-2" />
+            <img src={discord} alt="discord" className="h-10" />
           </div>
           <div className="hidden md:block">
             <img
@@ -129,7 +134,7 @@ function App() {
           </div>
         </div>
         <div className="md:hidden">
-          <div className="grid grid-row-2 lg:grid-cols-4 h-screen">
+          <div className="grid grid-row-2 lg:grid-cols-4 h-screen mb-96 pt-24">
             <Card
               bg="bg-neutral-50"
               data={people[peopleIndex[0]]}
@@ -158,15 +163,14 @@ function App() {
           </div>
 
         </div>
-        {/* <div className="fixed bottom-0 md:hidden">
-          <div className="flex justify-between w-screen p-5 bg-white">
-            <button className="py-2 px-5 border rounded-lg hover:text-white hover:bg-neutral-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-neutral-600 focus:ring-offset-2" onClick={setPeopleIndex(randomizePeoplexIndex())}>Generate</button>
+        <div className="fixed bottom-0 md:hidden z-10">
+          <div className="flex justify-between w-screen p-3 bg-white">
+            <button className="py-2 px-5 border rounded-lg hover:text-black  hover:border-black" onClick={generate}>Generate</button>
             <div className="flex gap-5 items-center">
               <span>Meet Our Team</span>
-              <img src={discord} alt="discord" width={100} />
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </div >
   );
