@@ -44,7 +44,7 @@ function OurTeam() {
             <img
               src={ziadyPicture}
               alt="picture"
-              className="block text-center mx-auto w-56 h-56 object-cover"
+              className="block text-center mx-auto w-52 h-52 object-cover"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = defaultProfilePicture;
@@ -65,7 +65,7 @@ function OurTeam() {
             <img
               src={safikPicture}
               alt="picture"
-              className="block text-center mx-auto w-56 h-56 object-cover"
+              className="block text-center mx-auto w-52 h-52 object-cover"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = defaultProfilePicture;
@@ -86,7 +86,7 @@ function OurTeam() {
             <img
               src={fajriPicture}
               alt="picture"
-              className="block text-center mx-auto w-56 h-56 object-cover"
+              className="block text-center mx-auto w-52 h-52 object-cover"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = defaultProfilePicture;
@@ -107,7 +107,7 @@ function OurTeam() {
             <img
               src={zidanPicture}
               alt="picture"
-              className="block text-center mx-auto w-56 h-56 object-cover"
+              className="block text-center mx-auto w-52 h-52 object-cover"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = defaultProfilePicture;
@@ -128,7 +128,7 @@ function OurTeam() {
             <img
               src={wahyuPicture}
               alt="picture"
-              className="block text-center mx-auto w-56 h-56 object-cover"
+              className="block text-center mx-auto w-52 h-52 object-cover"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = defaultProfilePicture;
