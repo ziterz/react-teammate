@@ -103,7 +103,7 @@ function App() {
                 Press the <b>&nbsp;spacebar&nbsp;</b> to find your teammate!
               </span>
               <div className="flex gap-5 items-center">
-                <Link to="/team">Meet Our Team</Link>
+                <Link to="/team" className="hover:underline focus:underline hover:underline-offset-4 focus:underline-offset-4">Meet Our Team</Link>
                 <a href="https://discord.gg/JBjyBUsK" target="_blank">
                   <img src={discord} alt="discord" width={100} />
                 </a>
@@ -180,7 +180,7 @@ function App() {
               Generate
             </button>
             <div className="flex gap-5 items-center">
-              <Link to="/team" className="hover:underline focus:underline">
+              <Link to="/team" className="hover:underline focus:underline hover:underline-offset-4 focus:underline-offset-4">
                 Meet Our Team
               </Link>
             </div>

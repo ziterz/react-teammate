@@ -32,7 +32,7 @@ const Card = (props) => {
     <div className={`flex justify-center items-center && ${props.bg}`}>
       {/* Desktop version*/}
 
-      <div className="flex-row py-10 hidden md:block">
+      <div className="flex-row py-10 hidden md:block px-10">
         {loading ? (
           <img
             src={people?.picture || defaultProfilePicture}
