@@ -157,7 +157,7 @@ function App() {
           </div>
 
         </div>
-        <div className="fixed bottom-0 md:hidden">
+        {/* <div className="fixed bottom-0 md:hidden">
           <div className="flex justify-between w-screen p-5 bg-white">
             <button className="py-2 px-5 border rounded-lg hover:text-white hover:bg-neutral-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-neutral-600 focus:ring-offset-2" onClick={setPeopleIndex(randomizePeoplexIndex())}>Generate</button>
             <div className="flex gap-5 items-center">
@@ -165,7 +165,7 @@ function App() {
               <img src={discord} alt="discord" width={100} />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div >
   );
