@@ -31,7 +31,7 @@ function App() {
         peopleIndexList[i] = pplIdx;
         return;
       }
-      
+
       let randomNumber;
       do {
         randomNumber = randomizeNumber();
@@ -75,7 +75,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="mx-auto">
+      <div className="mx-auto static">
         <div className="absolute ">
           <div className="md:hidden">
             <img src={fyt} alt="fyt logo" width={220} className="mx-auto p-2" />
@@ -98,34 +98,76 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 h-screen">
-          <Card
-            bg="bg-neutral-50"
-            data={people[peopleIndex[0]]}
-            lock={locks[0]}
-            onToggleLock={() => toggleLock(0)}
-          />
-          <Card
-            bg="bg-neutral-100"
-            data={people[peopleIndex[1]]}
-            lock={locks[1]}
-            onToggleLock={() => toggleLock(1)}
-          />
-          <Card
-            bg="bg-neutral-200"
-            data={people[peopleIndex[2]]}
-            lock={locks[2]}
-            onToggleLock={() => toggleLock(2)}
-          />
-          <Card
-            bg="bg-neutral-300"
-            data={people[peopleIndex[3]]}
-            lock={locks[3]}
-            onToggleLock={() => toggleLock(3)}
-          />
+        <div className="hidden md:block">
+          <div className="grid grid-cols-2 lg:grid-cols-4 h-screen ">
+            <Card
+              bg="bg-neutral-50"
+              data={people[peopleIndex[0]]}
+              lock={locks[0]}
+              onToggleLock={() => toggleLock(0)}
+            />
+            <Card
+              bg="bg-neutral-100"
+              data={people[peopleIndex[1]]}
+              lock={locks[1]}
+              onToggleLock={() => toggleLock(1)}
+            />
+            <Card
+              bg="bg-neutral-50"
+              data={people[peopleIndex[2]]}
+              lock={locks[2]}
+              onToggleLock={() => toggleLock(2)}
+            />
+            <Card
+              bg="bg-neutral-100"
+              className="md:order-last"
+              data={people[peopleIndex[3]]}
+              lock={locks[3]}
+              onToggleLock={() => toggleLock(3)}
+            />
+          </div>
+        </div>
+        <div className="md:hidden">
+          <div className="grid grid-row-2 lg:grid-cols-4 h-screen">
+            <Card
+              bg="bg-neutral-50"
+              data={people[peopleIndex[0]]}
+              lock={locks[0]}
+              onToggleLock={() => toggleLock(0)}
+            />
+            <Card
+              bg="bg-neutral-100"
+              data={people[peopleIndex[1]]}
+              lock={locks[1]}
+              onToggleLock={() => toggleLock(1)}
+            />
+            <Card
+              bg="bg-neutral-50"
+              data={people[peopleIndex[2]]}
+              lock={locks[2]}
+              onToggleLock={() => toggleLock(2)}
+            />
+            <Card
+              bg="bg-neutral-100"
+              className="md:order-last"
+              data={people[peopleIndex[3]]}
+              lock={locks[3]}
+              onToggleLock={() => toggleLock(3)}
+            />
+          </div>
+
+        </div>
+        <div className="fixed bottom-0 md:hidden">
+          <div className="flex justify-between w-screen p-5 bg-white">
+            <button className="py-2 px-5 border rounded-lg hover:text-white hover:bg-neutral-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-neutral-600 focus:ring-offset-2" onClick={setPeopleIndex(randomizePeoplexIndex())}>Generate</button>
+            <div className="flex gap-5 items-center">
+              <span>Meet Our Team</span>
+              <img src={discord} alt="discord" width={100} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
