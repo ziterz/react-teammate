@@ -14,12 +14,7 @@ function App() {
     const handleKeyDown = (event) => {
       console.log("[App][useEffect][handleKeyDown][people]", people);
       if (event.code === "Space") {
-        setPeopleIndex([
-          locks[0] ? peopleIndex[0] : randomizeNumber(),
-          locks[1] ? peopleIndex[1] : randomizeNumber(),
-          locks[2] ? peopleIndex[2] : randomizeNumber(),
-          locks[3] ? peopleIndex[3] : randomizeNumber()
-        ]);
+        setPeopleIndex(randomizePeoplexIndex());
       }
     };
     document.addEventListener("keydown", handleKeyDown);
@@ -28,8 +23,27 @@ function App() {
     };
   }, [locks, peopleIndex, people]);
 
+  const randomizePeoplexIndex = () => {
+    const peopleIndexList = [];
+
+    peopleIndex.forEach((pplIdx, i) => {
+      if (locks[i]) {
+        peopleIndexList[i] = pplIdx;
+        return;
+      }
+      
+      let randomNumber;
+      do {
+        randomNumber = randomizeNumber();
+      } while (peopleIndexList.includes(randomNumber));
+
+      peopleIndexList[i] = randomNumber;
+    });
+
+    return peopleIndexList;
+  }
+
   const randomizeNumber = () => {
-    console.log("[App][randomizeNumber][people.length]", people.length);
     if (people.length === 0) return;
 
     const randomNumber = Math.floor(Math.random() * people.length);
