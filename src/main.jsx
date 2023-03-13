@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import App from './App'
 import OurTeam from './pages/OurTeam'
+import NotFound from './pages/NotFound'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <h1>404 Page</h1>,
+    element: <NotFound />,
   },
 ]);
 
