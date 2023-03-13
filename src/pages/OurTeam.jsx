@@ -6,7 +6,7 @@ function OurTeam() {
 	return (
 		<div className="container mx-auto">
 			<div className="w-screen px-3 py-3 bg-white flex justify-between items-center">
-				<Link to="/">back to Home</Link>
+				<Link to="/" className="hover:underline focus:underline">back to Home</Link>
 			</div>
 			<h1 className="text-5xl font-semibold">Meet Our Team</h1>
 			<div className="grid grid-cols-3 mt-16 gap-20">
