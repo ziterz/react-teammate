@@ -67,7 +67,7 @@ function OurTeam() {
             {loading ? <Skeleton /> : "Safik"}
           </h2>
           <h3 className="mb-2 ml-2">
-            {loading ? <Skeleton /> : "Developer"}
+            {loading ? <Skeleton /> : "Roamer"}
           </h3>
         </div>
 				<div>
