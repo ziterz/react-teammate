@@ -78,13 +78,14 @@ function App() {
       <div className="mx-auto static">
         <div className="absolute ">
           <div className="md:hidden">
-            <img src={fyt} alt="fyt logo" width={220} className="mx-auto p-2" />
+            <img src={fyt} alt="fyt logo" width={220} height={220} className="mx-auto p-2" />
           </div>
           <div className="hidden md:block">
             <img
               src={fyt}
               alt="fyt logo"
               width={300}
+              height={300}
               className="absolute top-0 left-0 right-0 mx-auto "
             />
             <div className="flex justify-between w-screen p-5 bg-white">
