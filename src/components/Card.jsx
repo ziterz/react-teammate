@@ -32,7 +32,7 @@ const Card = (props) => {
       <div className="flex-row py-10 hidden md:block">
         {loading ? (
           <img
-            src={people.picture || defaultProfilePicture}
+            src={people?.picture || defaultProfilePicture}
             alt="picture"
             className="block mx-auto rounded-full w-40 h-40 object-cover"
             onError={(e) => {
@@ -44,23 +44,23 @@ const Card = (props) => {
           <Skeleton height={160} width={160} />
         )}
         <h2 className="text-xl mt-5 mb-2 font-semibold">
-          {loading ? people.name : <Skeleton />}
+          {loading ? people?.name : <Skeleton />}
         </h2>
         <span className="text-sm text-slate-400">Background :</span>
         <h2 className="text-md mb-2 text-slate-900">
-          {loading ? people.background : <Skeleton />}
+          {loading ? people?.background : <Skeleton />}
         </h2>
         <span className="text-sm text-slate-400">Interest :</span>
         <h2 className="text-md mb-2 text-slate-900">
-          {loading ? people.interest : <Skeleton />}
+          {loading ? people?.interest : <Skeleton />}
         </h2>
         <span className="text-sm text-slate-400">Goals :</span>
         <h2 className="text-md mb-2 text-slate-900">
-          {loading ? people.goals : <Skeleton />}
+          {loading ? people?.goals : <Skeleton />}
         </h2>
         <span className="text-sm text-slate-400">Social Media :</span>
         <h2 className="text-md mb-2 text-slate-900">
-          {loading ? people.socialMedia : <Skeleton />}
+          {loading ? people?.socialMedia : <Skeleton />}
         </h2>
         <div className="mt-10">
           <button onClick={props.onToggleLock} className={`fa-solid ${props.lock ? "fa-lock" : "fa-unlock"} text-2xl`} />
@@ -71,7 +71,7 @@ const Card = (props) => {
         <div className="min-w-[100px] grow-1">
           {loading ? (
             <img
-              src={people.picture || defaultProfilePicture}
+              src={people?.picture || defaultProfilePicture}
               alt="picture"
               className="block  text-center mx-auto rounded-full w-24 h-24 object-cover"
               onError={(e) => {
@@ -83,26 +83,26 @@ const Card = (props) => {
             <Skeleton height={160} width={160} />
           )}
           <h2 className="text-lg mt-5 mb-2 font-semibold text-center mx-auto">
-            {loading ? people.name : <Skeleton />}
+            {loading ? people?.name : <Skeleton />}
           </h2>
           <button onClick={props.onToggleLock} className={`fa-solid ${props.lock ? "fa-lock" : "fa-unlock"} text-2xl`} />
         </div>
         <div className="text-center mx-auto grow-1">
           <span className="text-sm text-slate-400">Background :</span>
           <h2 className="text-sm mb-2 text-slate-900">
-            {loading ? people.background : <Skeleton />}
+            {loading ? people?.background : <Skeleton />}
           </h2>
           <span className="text-sm text-slate-400">Interest :</span>
           <h2 className="text-sm mb-2 text-slate-900">
-            {loading ? people.interest : <Skeleton />}
+            {loading ? people?.interest : <Skeleton />}
           </h2>
           <span className="text-sm text-slate-400">Goals :</span>
           <h2 className="text-sm mb-2 text-slate-900">
-            {loading ? people.goals : <Skeleton />}
+            {loading ? people?.goals : <Skeleton />}
           </h2>
           <span className="text-sm text-slate-400">Social Media :</span>
           <h2 className="text-sm mb-2 text-slate-900">
-            {loading ? people.socialMedia : <Skeleton />}
+            {loading ? people?.socialMedia : <Skeleton />}
           </h2>
         </div>
       </div>
