@@ -46,22 +46,22 @@ const Card = (props) => {
         ) : (
           <Skeleton height={160} width={160} />
         )}
-        <h2 className="text-xl mt-5 mb-2 font-semibold">
-          {loading ? people?.name : <Skeleton />}
+        <h2 className="text-xl 2xl:text-4xl  mt-5 mb-2 font-semibold">
+          {loading ? people.name : <Skeleton />}
         </h2>
-        <span className="text-sm text-slate-400">Background :</span>
-        <h2 className="text-md mb-2 text-slate-900">
-          {loading ? people?.background : <Skeleton />}
+        <span className="text-sm 2xl:text-lg text-slate-400">Background :</span>
+        <h2 className="text-md 2xl:text-xl mb-2 text-slate-900">
+          {loading ? people.background : <Skeleton />}
         </h2>
-        <span className="text-sm text-slate-400">Interest :</span>
-        <h2 className="text-md mb-2 text-slate-900">
-          {loading ? people?.interest : <Skeleton />}
+        <span className="text-sm 2xl:text-lg text-slate-400">Interest :</span>
+        <h2 className="text-md 2xl:text-xl mb-2 text-slate-900">
+          {loading ? people.interest : <Skeleton />}
         </h2>
-        <span className="text-sm text-slate-400">Goals :</span>
-        <h2 className="text-md mb-2 text-slate-900">
-          {loading ? people?.goals : <Skeleton />}
+        <span className="text-sm 2xl:text-lg text-slate-400">Goals :</span>
+        <h2 className="text-md 2xl:text-xl mb-2 text-slate-900">
+          {loading ? people.goals : <Skeleton />}
         </h2>
-        <span className="text-sm text-slate-400">Social Media :</span>
+        <span className="text-sm 2xl:text-lg text-slate-400">Social Media :</span>
         {loading ? (
           <div className="mt-2 flex justify-center gap-2">
             {people?.instagram ? (
@@ -112,9 +112,8 @@ const Card = (props) => {
         <div className="mt-10">
           <button
             onClick={props.onToggleLock}
-            className={`fa-solid ${
-              props.lock ? "fa-lock" : "fa-unlock"
-            } text-2xl`}
+            className={`fa-solid ${props.lock ? "fa-lock" : "fa-unlock"
+              } text-2xl`}
           />
         </div>
       </div>
@@ -139,9 +138,8 @@ const Card = (props) => {
           </h2>
           <button
             onClick={props.onToggleLock}
-            className={`fa-solid ${
-              props.lock ? "fa-lock" : "fa-unlock"
-            } text-2xl`}
+            className={`fa-solid ${props.lock ? "fa-lock" : "fa-unlock"
+              } text-2xl`}
           />
         </div>
         <div className="text-center mx-auto basis-1/2">
