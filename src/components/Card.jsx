@@ -47,19 +47,19 @@ const Card = (props) => {
           <Skeleton height={160} width={160} />
         )}
         <h2 className="text-xl 2xl:text-4xl  mt-5 mb-2 font-semibold">
-          {loading ? people.name : <Skeleton />}
+          {loading ? people?.name : <Skeleton />}
         </h2>
         <span className="text-sm 2xl:text-lg text-slate-400">Background :</span>
         <h2 className="text-md 2xl:text-xl mb-2 text-slate-900">
-          {loading ? people.background : <Skeleton />}
+          {loading ? people?.background : <Skeleton />}
         </h2>
         <span className="text-sm 2xl:text-lg text-slate-400">Interest :</span>
         <h2 className="text-md 2xl:text-xl mb-2 text-slate-900">
-          {loading ? people.interest : <Skeleton />}
+          {loading ? people?.interest : <Skeleton />}
         </h2>
         <span className="text-sm 2xl:text-lg text-slate-400">Goals :</span>
         <h2 className="text-md 2xl:text-xl mb-2 text-slate-900">
-          {loading ? people.goals : <Skeleton />}
+          {loading ? people?.goals : <Skeleton />}
         </h2>
         <span className="text-sm 2xl:text-lg text-slate-400">Social Media :</span>
         {loading ? (
